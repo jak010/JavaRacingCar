@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import utils.StringUtils;
+import utils.Validation;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,8 +14,8 @@ public class UtilTest {
     void 문자열_구분_테스트() {
         String carNames = "pobi,woni,jun\n";
 
-        StringUtils util = new StringUtils();
-        assertThat(util.isIncludeComma(carNames)).isEqualTo(true);
+
+        assertThat(Validation.isIncludeComma(carNames)).isEqualTo(true);
     }
 
     /**
@@ -25,8 +25,8 @@ public class UtilTest {
     @DisplayName("02 차_이름_5글자_이상일_떄_테스트")
     void 차_이름_5글자_이상일_떄_테스트() {
         String carNameCase = "greentea";
-        StringUtils util = new StringUtils();
-        assertThat(util.validationCarName(carNameCase)).isEqualTo(false);
+        Validation util = new Validation();
+        assertThat(Validation.isCarName(carNameCase)).isEqualTo(false);
     }
 
 
@@ -37,7 +37,6 @@ public class UtilTest {
     @DisplayName("03 차_이름_5글자_이하일_떄_테스트")
     void 차_이름_5글자_이하일_떄_테스트() {
         String carNameCase = "pobi";
-        StringUtils util = new StringUtils();
-        assertThat(util.validationCarName(carNameCase)).isEqualTo(true);
+        assertThat(Validation.isCarName(carNameCase)).isEqualTo(true);
     }
 }
