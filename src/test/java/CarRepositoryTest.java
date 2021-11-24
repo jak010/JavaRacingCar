@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import racingcar.CarCenter;
-import racingcar.Conductor;
+import racingcar.CarRepository;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -10,7 +9,7 @@ import java.util.Scanner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class CarCenterTest {
+public class CarRepositoryTest {
 
     public static InputStream generateUserInput(String input) {
         /* Scanner 입력을 위해 테스트로 만든 함수 */
@@ -29,7 +28,7 @@ public class CarCenterTest {
 //        CarCenter carcenter = CarCenter.withCarNames(scanner.toString());
 
         //then
-        Assertions.assertThrows(RuntimeException.class, () -> CarCenter.withCarNames(scanner.toString()));
+        Assertions.assertThrows(RuntimeException.class, () -> CarRepository.withCarNames(scanner.toString()));
     }
 
     @Test
@@ -44,7 +43,7 @@ public class CarCenterTest {
 //        CarCenter carcenter = CarCenter.withCarNames(scanner.toString());
 
         //then
-        Assertions.assertThrows(RuntimeException.class, () -> CarCenter.withCarNames(scanner.toString()));
+        Assertions.assertThrows(RuntimeException.class, () -> CarRepository.withCarNames(scanner.toString()));
     }
 
 }

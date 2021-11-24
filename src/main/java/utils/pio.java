@@ -9,7 +9,9 @@ public class pio {
         return sc.nextLine();
     }
 
-    public static Integer roundNumberInput(Scanner sc) {
+    public static Integer roundInput(Scanner sc) {
         return sc.nextInt();
     }
+
+
 }

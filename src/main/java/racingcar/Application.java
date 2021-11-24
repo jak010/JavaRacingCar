@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class Application {
 
     public static void run(Scanner sc) {
-        Conductor conductor = new Conductor(sc);
-        conductor.start();
+        Conductor conductor = Conductor.setWithCars(sc);
+        conductor.start(sc);
     }
 
     public static void main(String[] args) {
