@@ -21,7 +21,7 @@ public class Race extends RaceRound {
         super.initializedRound(roundLimit);
     }
 
-    public void start(CarRepository carRepo) {
+    public void begin(CarRepository carRepo) {
         ArrayList<Integer> scoreBoard = getScore(carRepo.getQuantity());
 
         System.out.println(scoreBoard);

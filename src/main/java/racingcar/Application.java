@@ -16,7 +16,7 @@ public class Application {
         Race race = Race.withRoundLimit(sc.nextInt());
 
         // Stream을 이용한 Racing 처리
-        IntStream.range(0, race.getRoundLimit()).forEach(r -> race.start(carRepository));
+        IntStream.range(0, race.getRoundLimit()).forEach(r -> race.begin(carRepository));
 
         race.End(carRepository);
     }
