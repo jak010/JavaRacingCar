@@ -17,11 +17,11 @@ public class pio {
 
 
     /* Game OutPut */
-    public static void EOL(){
+    public static void EOL() {
         System.out.println();
     }
 
-    public static void raceProgress(Car car) {
+    public static void displayRaceProgress(Car car) {
 
         System.out.println(DisplayRaceCarName(car) + " : " + DisplayRaceCarPosition(car));
     }
@@ -38,7 +38,10 @@ public class pio {
         }
 
         return dashString;
+    }
 
+    public static void displayGameWinner(String winner) {
+        System.out.println("최종 우승자: " + winner);
     }
 
 }

@@ -1,12 +1,10 @@
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import round.RaceRound;
+import round.Round;
 
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.InstanceOfAssertFactories.ARRAY;
 
 public class RaceRoundTest {
 
@@ -17,11 +15,11 @@ public class RaceRoundTest {
         int roundLimit = 5;
 
         //when
-        RaceRound round = new RaceRound();
-        round.initializedRound(roundLimit);
+        Round round = new Round();
+        round.setUpTotalRound(roundLimit);
 
         // then
-        assertThat(round.getRoundLimit()).isEqualTo(roundLimit);
+        assertThat(round.getTotalRound()).isEqualTo(roundLimit);
     }
 
     @Test
@@ -32,10 +30,10 @@ public class RaceRoundTest {
         int carQuantity = 3;
 
         // when
-        RaceRound round = new RaceRound();
-        round.initializedRound(roundLimit);
+        Round round = new Round();
+        round.setUpTotalRound(roundLimit);
 
-        ArrayList<Integer> roundScore = round.getScore(carQuantity);
+        ArrayList<Integer> roundScore = round.getScoreBoard(carQuantity);
 
         // then
         assertThat(roundScore.size()).isEqualTo(carQuantity);

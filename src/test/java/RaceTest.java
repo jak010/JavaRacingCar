@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
-import round.RaceRound;
 import round.Race;
-import utils.RandomUtils;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -17,7 +15,7 @@ public class RaceTest {
         int raceRound = 3;
 
         // when
-        Race race = Race.withRoundLimit(raceRound);
+        Race race = Race.withTotalRound(raceRound);
 
 
     }

@@ -7,24 +7,31 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class Application {
+    static CarRepository carRepository;
+    static Race race;
 
-    public static void run(Scanner sc) {
-        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        CarRepository carRepository = CarRepository.withCarNames(sc.nextLine());
+    public static void run() {
 
-        System.out.println("시도할 횟수는 몇회인가요?");
-        Race race = Race.withRoundLimit(sc.nextInt());
+        if (!race.isRaceStatus()) {
+            race.run(carRepository);
+        }
 
-        // Stream을 이용한 Racing 처리
-        IntStream.range(0, race.getRoundLimit()).forEach(r -> race.begin(carRepository));
 
-        race.End(carRepository);
+        if (race.isRaceStatus()) {
+            race.End(carRepository);
+        }
     }
 
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
-
         // TODO 구현 진행
-        Application.run(scanner);
+
+        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+        carRepository = CarRepository.withCarNames(scanner.nextLine());
+
+        System.out.println("시도할 횟수는 몇회인가요?");
+        race = Race.withTotalRound(scanner.nextInt());
+
+        Application.run();
     }
 }
