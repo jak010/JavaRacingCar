@@ -4,6 +4,7 @@ import Repository.CarRepository;
 import round.Race;
 
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Application {
 
@@ -14,9 +15,8 @@ public class Application {
         System.out.println("시도할 횟수는 몇회인가요?");
         Race race = Race.withRoundLimit(sc.nextInt());
 
-        for (int i = 0; i < race.getRoundLimit(); i++) {
-            race.start(carRepository);
-        }
+        // Stream을 이용한 Racing 처리
+        IntStream.range(0, race.getRoundLimit()).forEach(r -> race.start(carRepository));
 
         race.End(carRepository);
     }

@@ -20,7 +20,7 @@ public class CarDepartment {
     }
 
     public void initializedCarList(String carName) {
-
+        
         if (!carName.contains(",")) {
             throw new RuntimeException("[Error] 차는 콤마로 구분되어 복수개로 입력가능해야함");
         }
