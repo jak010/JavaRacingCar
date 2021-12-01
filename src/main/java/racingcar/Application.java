@@ -1,14 +1,17 @@
 package racingcar;
 
+import Department.NewDepartment;
 import Repository.CarRepository;
+import round.NewRace;
+import round.NewRound;
 import round.Race;
 
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
 public class Application {
     static CarRepository carRepository;
     static Race race;
+
 
     public static void run() {
 
@@ -26,12 +29,22 @@ public class Application {
         final Scanner scanner = new Scanner(System.in);
         // TODO 구현 진행
 
+//        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+//        carRepository = CarRepository.withCarNames(scanner.nextLine());
+//
+//        System.out.println("시도할 횟수는 몇회인가요?");
+//        race = Race.withTotalRound(scanner.nextInt());
+//
+//        Application.run();
+
+        // version 2
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        carRepository = CarRepository.withCarNames(scanner.nextLine());
+        String carName = scanner.nextLine();
 
         System.out.println("시도할 횟수는 몇회인가요?");
-        race = Race.withTotalRound(scanner.nextInt());
+        int totalRound = scanner.nextInt();
 
-        Application.run();
+        NewRace.withStart(NewDepartment.withCarName(carName),
+                NewRound.withTotalRound(totalRound));
     }
 }
