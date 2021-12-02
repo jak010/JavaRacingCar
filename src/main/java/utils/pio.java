@@ -1,7 +1,6 @@
 package utils;
 
 
-import Department.NewDepartment;
 import racingcar.Car;
 
 import java.util.Scanner;
@@ -22,11 +21,11 @@ public class pio {
         System.out.println();
     }
 
-    public static void newDisplayRaceProgress(NewDepartment department) {
-        for (int i = 0; i < department.carList.size(); i++) {
-            System.out.println(DisplayRaceCarName(department.carList.get(i)) + " : " + DisplayRaceCarPosition(department.carList.get(i)));
-        }
-    }
+//    public static void newDisplayRaceProgress(NewDepartment department) {
+//        for (int i = 0; i < department.carList.size(); i++) {
+//            System.out.println(DisplayRaceCarName(department.carList.get(i)) + " : " + DisplayRaceCarPosition(department.carList.get(i)));
+//        }
+//    }
 
     public static void displayRaceProgress(Car car) {
 
